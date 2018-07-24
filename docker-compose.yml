@@ -92,6 +92,7 @@ opennti:
    - "$LOCAL_PORT_GRAFANA:3000"
    - "$LOCAL_PORT_INFLUXDB:8083"
    - "$LOCAL_PORT_INFLUXDB_API:8086"
+   - "161:161/udp"
 
 
 
