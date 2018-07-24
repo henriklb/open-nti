@@ -99,6 +99,14 @@ RUN     mkdir /etc/service/telegraf
 ADD     docker/telegraf/telegraf.launcher.sh /etc/service/telegraf/run
 
 ########################
+### Install telegraf2 for SNMPalias (HENRIK) ###
+########################
+
+ADD     docker/telegraf/telegraf2snmpalias.conf /etc/telegraf/telegraf2snmpalias.conf
+
+ADD     docker/telegraf/telegraf.launcher.sh /etc/service/telegraf/run
+
+########################
 ### Configuration    ###
 ########################
 
