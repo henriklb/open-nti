@@ -92,8 +92,6 @@ ADD     docker/influxdb/influxdb.launcher.sh /etc/service/influxdb/run
 RUN     curl -s -o /tmp/telegraf_latest_amd64.deb https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}_amd64.deb && \
         dpkg -i /tmp/telegraf_latest_amd64.deb && \
         rm /tmp/telegraf_latest_amd64.deb
-
-ADD     docker/telegraf/telegraf.conf /etc/telegraf/telegraf.conf
 #HENRIK
 ADD     docker/telegraf/telegraf2snmpalias.conf /etc/telegraf/telegraf2snmpalias.conf
 RUN     apt-get update && apt-get -y install snmp snmp-mibs-downloader
