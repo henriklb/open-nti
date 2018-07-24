@@ -96,7 +96,8 @@ RUN     curl -s -o /tmp/telegraf_latest_amd64.deb https://dl.influxdata.com/tele
 ADD     docker/telegraf/telegraf.conf /etc/telegraf/telegraf.conf
 #HENRIK
 ADD     docker/telegraf/telegraf2snmpalias.conf /etc/telegraf/telegraf2snmpalias.conf
-
+RUN     apt-get update && apt-get -y install snmp snmp-mibs-downloader
+#/HENRIK
 RUN     mkdir /etc/service/telegraf
 ADD     docker/telegraf/telegraf.launcher.sh /etc/service/telegraf/run
 
