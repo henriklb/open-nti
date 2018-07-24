@@ -94,17 +94,14 @@ RUN     curl -s -o /tmp/telegraf_latest_amd64.deb https://dl.influxdata.com/tele
         rm /tmp/telegraf_latest_amd64.deb
 
 ADD     docker/telegraf/telegraf.conf /etc/telegraf/telegraf.conf
+#HENRIK
+ADD     docker/telegraf/telegraf2snmpalias.conf /etc/telegraf/telegraf2snmpalias.conf
 
 RUN     mkdir /etc/service/telegraf
 ADD     docker/telegraf/telegraf.launcher.sh /etc/service/telegraf/run
 
-########################
-### Install telegraf2 for SNMPalias (HENRIK) ###
-########################
 
-ADD     docker/telegraf/telegraf2snmpalias.conf /etc/telegraf/telegraf2snmpalias.conf
 
-ADD     docker/telegraf/telegraf.launcher.sh /etc/service/telegraf/run
 
 ########################
 ### Configuration    ###
